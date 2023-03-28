@@ -12,8 +12,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class CompanyListingRepositoryImpl(
+class CompanyListingRepositoryImpl @Inject constructor (
     private val dao: CompanyListingDao,
     private val api: StockApi,
     private val companyListingCsvParser: CsvParser<CompanyListing>

@@ -6,8 +6,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.InputStream
 import java.io.InputStreamReader
+import javax.inject.Inject
 
-class CompanyListingCsvParser: CsvParser<CompanyListing> {
+class CompanyListingCsvParser @Inject constructor(): CsvParser<CompanyListing> {
     override suspend fun parse(stream: InputStream): List<CompanyListing> {
         val csvReader = CSVReader(InputStreamReader(stream))
         return withContext(Dispatchers.IO) {

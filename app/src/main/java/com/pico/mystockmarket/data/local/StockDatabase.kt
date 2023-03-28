@@ -7,6 +7,6 @@ import androidx.room.RoomDatabase
     entities = [CompanyListingEntity::class],
     version = 1
 )
-abstract class CompanyListingDatabase : RoomDatabase() {
+abstract class StockDatabase : RoomDatabase() {
     abstract val companyListingDao: CompanyListingDao
 }
